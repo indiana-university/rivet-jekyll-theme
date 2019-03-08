@@ -1,0 +1,16 @@
+<div class="rvt-header__controls">
+    {% assign page_paths_map = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: page_paths_map %}
+    <nav role="navigation" aria-label="main" class="rvt-header__main-nav">
+        <ul>
+            {%- for path in page_paths -%}
+            {%- assign page = site.pages | where: "path", path | first -%}
+            {%- if page.title -%}
+            <li>
+                <a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+            </li>
+            {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </nav>
+</div>
