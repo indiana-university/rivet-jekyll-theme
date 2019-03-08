@@ -1,0 +1,28 @@
+{% comment %}
+Copyright (C) 2019 The Trustees of Indiana University
+SPDX-License-Identifier: BSD-3-Clause
+{% endcomment %}
+{%- if site.posts.size > 0 -%}
+<article>
+    <h2>{{ page.list_title | default: "Posts" }}</h2>
+
+    {%- for post in site.posts -%}
+    <section>
+        <header>
+            <h3>
+                <a href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <p>{{ post.date | date: date_format }}</p>
+        </header>
+        {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+        {%- endif -%}
+    </section>
+    {%- endfor -%}
+
+    <p><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+</article>
+{%- endif -%}
