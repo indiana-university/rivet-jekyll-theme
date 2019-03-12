@@ -18,15 +18,6 @@ gulp.task('copyRivetBaseSCSS', function (done) {
     done();
 });
 
-// const RIVET_SHELL_SCSS_DEST = '_sass/libs/rivet-shell';
-// Not needed and references node_modules, which probably won't work in Jekyll.
-// gulp.task('copyRivetShellSCSS', function (done) {
-//     gulp.src('node_modules/rivet-shell/src/sass/**/*')
-//         .pipe(using())
-//         .pipe(gulp.dest(RIVET_SHELL_SCSS_DEST));
-//     done();
-// });
-
 gulp.task('copyRivetBaseCSS', function (done) {
     gulp.src('node_modules/rivet-uits/css/**/*')
         .pipe(using())
@@ -52,9 +43,9 @@ gulp.task('clean:rivet', function () {
     return del([`assets/css/libs/**/*`, `assets/js/libs/**/*`, `_sass/libs/**/*`]);
 });
 
-gulp.task('rivet', gulp.series('clean:rivet', 'copyRivetBaseCSS', 'copyRivetBaseSCSS', 'copyRivetShellCSS', 'copyRivetShellSCSS'));
+gulp.task('rivet', gulp.series('clean:rivet', 'copyRivetBaseCSS', 'copyRivetBaseSCSS', 'copyRivetShellCSS', 'copyRivetBaseJS'));
 
 gulp.task('default', function (done) {
-    console.log('gulpfile: run `yarn run rivet` to clean and copy rivet/rivet-shell libraries');
+    console.log('gulpfile: run `yarn run rivet` or `gulp rivet` to clean and copy rivet/rivet-shell libraries');
     done();
 });
