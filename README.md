@@ -12,7 +12,7 @@ This repository holds the code for a [Rivet](http://rivet.iu.edu)/[Rivet Shell](
 Add the following to your Gemfile in your Jekyll site:
     
 ```
-gem "rivet-jekyll-theme", :git => "git://github.com/indiana-university/rivet-jekyll-theme.git"
+gem "rivet-jekyll-theme", :git => "https://github.com/indiana-university/rivet-jekyll-theme.git"
 ```
 
 ### 2. _config.yml
