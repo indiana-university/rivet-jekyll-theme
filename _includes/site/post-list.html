@@ -3,9 +3,8 @@ Copyright (C) 2019 The Trustees of Indiana University
 SPDX-License-Identifier: BSD-3-Clause
 {% endcomment %}
 {%- if site.posts.size > 0 -%}
-<article>
+<article class="rvt-p-all-xxl listing-body">
     <h2>{{ page.list_title | default: "Posts" }}</h2>
-
     {%- for post in site.posts -%}
     <section>
         <header>

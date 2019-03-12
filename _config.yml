@@ -3,3 +3,8 @@
 
 title: Rivet Jekyll Theme
 
+kramdown:
+  parse_block_html: true
+sass:
+  sass_dir: _sass
+  style: compressed # what are the other options?
