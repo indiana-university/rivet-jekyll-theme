@@ -4,13 +4,25 @@
 layout: base
 ---
 
-<div class="rvt-shell ccore-post">
+<div class="rvt-shell post">
     <div class="rvt-shell__stage">
-        <div class="rvt-p-all-xxl">
+        <article class="rvt-p-all-xxl post-body">
+            <header>
+                <h1>{{ page.title }}</h1>
+                {% if page.subheading1 and page.subheading1 != empty %}<p class="subheading1">{{ page.subheading1 }}</p>{% endif %}
+                {% if page.subheading2 and page.subheading2 != empty %}<p class="subheading2">{{ page.subheading2 }}</p>{% endif %}
+                {% if page.lead != empty %}
+                <div class="lead">
+                {{ page.lead | markdownify }}
+                </div>
+                {% endif %}
+            </header>
+
+            {% include posts/toc.html content=content %}
+
             {{ content }}
 
-            {% include site/post-list.html %}
-
-        </div>
+        </article>
+        {% include site/post-list.html %}
     </div>
 </div>
