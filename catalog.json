@@ -1,0 +1,10 @@
+{
+  "id": "rivet-jekyll-theme",
+  "name": "Rivet Jekyll Theme for GitHub Pages",
+  "type": "other",
+  "owner": "DCD Team",
+  "repo_url": "https://github.com/indiana-university/rivet-jekyll-theme",
+  "description": "An old repo for theming github sites using Rivet.",
+  "depends_on": ["rivet", "rivet-kbdoc-styles"],
+  "status": "archived"
+}
